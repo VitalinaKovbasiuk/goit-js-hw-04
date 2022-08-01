@@ -938,137 +938,92 @@
 
 /* Завдання 41 автоперевірка
  */
-// ЗАДАЧА: РОЗШИРЮЄМО ІНВЕНТАР
-// Замовниця хоче, щоб кожне зілля було представлено не тільки ім'ям, але й ціною, 
-// а в майбутньому, можливо, й іншими характеристиками. 
-// Тому зараз у властивості potions буде зберігатися масив об'єктів з наступними властивостями.
 
-// {
-//   name: "Dragon breath",
-//   price: 700
-// }
-// Виконай рефакторинг методів об'єкта atTheOldToad таким чином, щоб вони працювали не з масивом рядків, а з масивом об'єктів.
 
-// getPotions() - метод для отримання всього зілля. Повертає значення властивості potions.
-// addPotion(newPotion) - додає зілля newPotion (вже об'єкт) в масив у властивості potions, 
-// але тільки, якщо такого зілля ще немає в інвентарі. В іншому випадку повертається рядок.
-// removePotion(potionName) - видаляє об'єкт зілля з ім'ям potionName з масиву у властивості potions.
-// updatePotionName(oldName, newName) - оновлює властивість name об'єкта-зілля з назвою oldName на newName в масиві potions.
-//!!!before:
-// const atTheOldToad = {
-//     potions: [
-//       { name: "Speed potion", price: 460 },
-//       { name: "Dragon breath", price: 780 },
-//       { name: "Stone skin", price: 520 },
-//     ],
-//     getPotions() {
-//       return this.potions;
-//     },
-//     addPotion(newPotion) {
-//       if (this.potions.includes(newPotion)) {
-//         return `Error! Potion ${newPotion} is already in your inventory!`;
-//       }
-//       this.potions.push(newPotion);
-//     },
-//     removePotion(potionName) {
-//       const potionIndex = this.potions.indexOf(potionName);
-//       if (potionIndex === -1) {
-//         return `Potion ${potionName} is not in inventory!`;
-//       }
-//       this.potions.splice(potionIndex, 1);
-//     },
-//     updatePotionName(oldName, newName) {
-//       const potionIndex = this.potions.indexOf(oldName);
-//       if (potionIndex === -1) {
-//         return `Potion ${oldName} is not in inventory!`;
-//       }
-//       this.potions.splice(potionIndex, 1, newName);
-//     },
-//   };
-//!!after:
-const atTheOldToad = {
-    potions: [
-      { name: "Speed potion", price: 460 },
-      { name: "Dragon breath", price: 780 },
-      { name: "Stone skin", price: 520 },
-    ],
-    getPotions() {
-      return this.potions;
-    },
-    addPotion(newPotion) {
-      for (const potion of this.potions) {
-        if (potion.name === newPotion.name) {
-          return `Error! Potion ${newPotion.name} is already in your inventory!`;
-        }
-      }
-      this.potions.push(newPotion);
-    },
-    removePotion(potionName) {
-      for (const potion of this.potions) {
-        if (potion.name === potionName) {
-          const potionIndex = this.potions.indexOf(potion);
-          if (potionIndex === -1) {
-            return `Potion ${potionName} is not in inventory!`;
-          }
-          this.potions.splice(potionIndex, 1);
-        }
-      }
-    },
-    updatePotionName(oldName, newName) {
-      for (const potion of this.potions) {
-        if (potion.name === oldName) {
-          potion.name = newName;
-        }
-      }
-    },
-  }; 
-  
+ 
 
-/* MODULE 4
+/* Завдання 42 автоперевірка
  */
+//!!!before:
+
+
+//!!!after:
+
+
+/* Завдання 43 автоперевірка
+ */
+//!!!before:
+
+
+//!!!after:
+
+
+
+/* Завдання 44 автоперевірка
+ */
+//!!!before:
+
+
+//!!!after:
+const sortByName = users => 
+[...users].sort((firstName, secondName) => firstName.name.localeCompare(secondName.name));
+;
+;
+
+
+
+/* Завдання 45 автоперевірка
+ */
+//!!!before:
+
+
+//!!!after:
+const names = [...books].filter((book => book.rating > MIN_BOOK_RATING)).map(book => book.author).sort((a,b) => a.localeCompare(b));
+
+
+
+
+/* Завдання 46 автоперевірка
+ */
+//!!!before:
+
+
+//!!!after:
+const getNamesSortedByFriendCount = users => 
+   [...users].sort((firstName, secondName) => firstName.friends.length -  secondName.friends.length).map(user => user.name);
+
+
+
+
+/* Завдання 47 автоперевірка
+ */
+//!!!before:
+
+
+//!!!after:
+const getSortedFriends = users => 
+
+[...users].flatMap(user => user.friends).filter((friends, index, array) => array.indexOf(friends) === index).sort((a, b) => a.localeCompare(b));   
+
+
+
+
+
 
 /* Завдання 48 автоперевірка
  */
+//!!!before:
+
+
+//!!!after:
 const getTotalBalanceByGender = (users, gender) => users.filter
     (user=> user.gender === gender).reduce((total,user) =>{
         return total+user.balance;
    
 }, 0)
 
-/* Завдання 47 автоперевірка
- */
-const getSortedFriends = users => 
-
-[...users].flatMap(user => user.friends).filter((friends, index, array) => array.indexOf(friends) === index).sort((a, b) => a.localeCompare(b));   
-
-/* Завдання 46 автоперевірка
- */
-const getNamesSortedByFriendCount = users => 
-   [...users].sort((firstName, secondName) => firstName.friends.length -  secondName.friends.length).map(user => user.name);
-;
-;
-;
-
-/* Завдання 45 автоперевірка
- */
-const names = [...books].filter((book => book.rating > MIN_BOOK_RATING)).map(book => book.author).sort((a,b) => a.localeCompare(b));
 
 
-/* Завдання 44 автоперевірка
- */
-const sortByName = users => 
-[...users].sort((firstName, secondName) => firstName.name.localeCompare(secondName.name));
-;
-;
 
-/* Завдання 43 автоперевірка
- */
 
-/* Завдання 42 автоперевірка
- */
 
-/* Завдання 41 автоперевірка
- */
-
-/* Завдання 40 автоперевірка
- */
