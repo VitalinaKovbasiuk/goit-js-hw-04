@@ -617,29 +617,29 @@
 // const topRatedBooks = books;
 // const booksByAuthor = books;
 //!!!after:
-const books = [
-  {
-    title: "The Last Kingdom",
-    author: "Bernard Cornwell",
-    rating: 8.38,
-  },
-  {
-    title: "Beside Still Waters",
-    author: "Robert Sheckley",
-    rating: 8.51,
-  },
-  {
-    title: "The Dream of a Ridiculous Man",
-    author: "Fyodor Dostoevsky",
-    rating: 7.75,
-  },
-  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
-  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
-];
-const MIN_RATING = 8;
-const AUTHOR = "Bernard Cornwell";
-const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
-const booksByAuthor = books.filter(book => book.author === AUTHOR);
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+// const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+// const booksByAuthor = books.filter(book => book.author === AUTHOR);
 
 
 
@@ -648,10 +648,15 @@ const booksByAuthor = books.filter(book => book.author === AUTHOR);
 
 /* Завдання 22 автоперевірка
  */
+// ЗАДАЧА. КОРИСТУВАЧІ З КОЛЬОРОМ ОЧЕЙ
+// Доповни функцію getUsersWithEyeColor(users, color) таким чином, щоб вона повертала масив користувачів, 
+// у яких колір очей (властивість eyeColor) збігається зі значенням параметра color.
 //!!!before:
-
-
+// const getUsersWithEyeColor = (users, color) => {
+// };
 //!!!after:
+// const getUsersWithEyeColor = (users, color) => 
+// users.filter(user => user.eyeColor === color);
 
 
 
@@ -659,11 +664,16 @@ const booksByAuthor = books.filter(book => book.author === AUTHOR);
 
 /* Завдання 23 автоперевірка
  */
+// ЗАДАЧА. КОРИСТУВАЧІ У ВІКОВІЙ КАТЕГОРІЇ
+// Доповни функцію getUsersWithAge(users, minAge, maxAge) таким чином, 
+// щоб вона повертала масив користувачів, вік яких (властивість age) потрапляє у проміжок від minAge до maxAge.
 //!!!before:
-
-
+// const getUsersWithAge = (users, minAge, maxAge) => {
+// };
 //!!!after:
-
+// const getUsersWithAge = (users, minAge, maxAge) => 
+//  users.filter(user => user.age <= maxAge & user.age >= minAge)
+// ;
 
 
 
@@ -671,11 +681,16 @@ const booksByAuthor = books.filter(book => book.author === AUTHOR);
 
 /* Завдання 24 автоперевірка
  */
+// ЗАДАЧА. КОРИСТУВАЧІ З ДРУГОМ
+// Доповни функцію getUsersWithFriend(users, friendName) таким чином, щоб вона повертала масив користувачів, 
+// у яких є один з ім'ям в параметрі friendName. Масив друзів користувача зберігається у властивості friends.
 //!!!before:
-
-
+// const getUsersWithFriend = (users, friendName) => {
+// };
 //!!!after:
-  
+// const getUsersWithFriend = (users, friendName) => 
+// users.filter(user => user.friends.includes(friendName));
+// ;
 
 
 
@@ -683,22 +698,30 @@ const booksByAuthor = books.filter(book => book.author === AUTHOR);
 
 /* Завдання 25 автоперевірка
  */
+// ЗАДАЧА. СПИСОК ДРУЗІВ
+// Доповни функцію getFriends(users) таким чином, щоб вона повертала масив друзів всіх користувачів (властивість friends).
+// У декількох користувачів можуть бути однакові друзі, зроби так, щоб масив, що повертається, не містив повторень.
 //!!!before:
-
-
+// const getFriends = (users) => {
+// };
 //!!!after:
-  
+// const getFriends = users => 
+// users.flatMap(user => user.friends).filter((course, index, array) => array.indexOf(course) === index);; 
 
 
 
 
 /* Завдання 26 автоперевірка
  */
+// ЗАДАЧА. АКТИВНІ КОРИСТУВАЧІ
+// Доповни функцію getActiveUsers(users) таким чином, щоб вона повертала масив активних користувачів, значення властивості isActive яких - true.
 //!!!before:
-
-
+// const getActiveUsers = (users) => {
+// };
 //!!!after:
-  
+// const getActiveUsers = (users) => 
+// users.filter(user => user.isActive === true);
+// ; 
 
 
 
