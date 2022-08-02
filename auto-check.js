@@ -161,10 +161,30 @@
 
 /* Завдання 6 автоперевірка
  */
+// ЗАДАЧА. ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ
+// Функція filterArray(numbers, value) приймає масив чисел numbers і повертає новий масив, 
+// в якому будуть тільки ті елементи оригінального масиву, які більші за значення параметра value.
+// Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach.
 //!!!before:
-
-
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] > value) {
+//       filteredNumbers.push(numbers[i]);
+//     }
+//   }
+//   return filteredNumbers;
+// }
 //!!!after:
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+// numbers.forEach(number => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+// })
+//   return filteredNumbers;
+// }
 
 
 
@@ -172,11 +192,30 @@
 
 /* Завдання 7 автоперевірка
  */
+// ЗАДАЧА. СПІЛЬНІ ЕЛЕМЕНТИ
+// Функція getCommonElements(firstArray, secondArray) приймає два масиви довільної довжини в параметри firstArray і secondArray, 
+// і повертає новий масив їхніх спільних елементів, тобто тих, які присутні в обох масивах.
+// Виконай рефакторинг функції таким чином, щоб замість циклу for, вона використовувала метод forEach.
 //!!!before:
-
-
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   for (let i = 0; i < firstArray.length; i += 1) {
+//     if (secondArray.includes(firstArray[i])) {
+//       commonElements.push(firstArray[i]);
+//     }
+//   }
+//   return commonElements;
+// }
 //!!!after:
-
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+// firstArray.forEach(element => {
+//      if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+// })
+//   return commonElements;
+// }
 
 
 
@@ -184,11 +223,16 @@
 
 /* Завдання 8 автоперевірка
  */
+// СТРІЛОЧНІ ФУНКЦІЇ.
+// Виконай рефакторинг функції calculateTotalPrice() таким чином, щоб вона була оголошена як стрілочна.
 //!!!before:
-
-
+// function calculateTotalPrice(quantity, pricePerItem) {
+//   return quantity * pricePerItem;
+// }
 //!!!after:
-
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   return quantity * pricePerItem;
+// }
 
 
 
@@ -196,10 +240,14 @@
 
 /* Завдання 9 автоперевірка
  */
+// НЕЯВНЕ ПОВЕРНЕННЯ
+// Виконай рефакторинг функції calculateTotalPrice() таким чином, щоб вона використовувала неявне повернення.
 //!!!before:
-
-
+// const calculateTotalPrice = (quantity, pricePerItem) => {
+//   return quantity * pricePerItem;
+// };
 //!!!after:
+// const calculateTotalPrice = (quantity, pricePerItem) => quantity * pricePerItem;
 
 
 
@@ -208,11 +256,25 @@
 
 /* Завдання 10 автоперевірка
  */
+// СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ
+// Виконай рефакторинг функції calculateTotalPrice(orderedItems), 
+// замінивши її оголошення на стрілочну функцію. Заміни колбек-функцію, передану в метод forEach(), на стрілочну функцію.
 //!!!before:
-
-
+// function calculateTotalPrice(orderedItems) {
+//   let totalPrice = 0;
+//   orderedItems.forEach(function (item) {
+//     totalPrice += item;
+//   });
+//   return totalPrice;
+// }
 //!!!after:
-
+const calculateTotalPrice = (orderedItems) =>  {
+  let totalPrice = 0;
+  orderedItems.forEach((item) => {
+    totalPrice += item;
+  });
+  return totalPrice;
+}
 
 
 
