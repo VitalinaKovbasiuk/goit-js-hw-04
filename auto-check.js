@@ -268,43 +268,98 @@
 //   return totalPrice;
 // }
 //!!!after:
-const calculateTotalPrice = (orderedItems) =>  {
-  let totalPrice = 0;
-  orderedItems.forEach((item) => {
-    totalPrice += item;
-  });
-  return totalPrice;
-}
+// const calculateTotalPrice = (orderedItems) =>  {
+//   let totalPrice = 0;
+//   orderedItems.forEach((item) => {
+//     totalPrice += item;
+//   });
+//   return totalPrice;
+// }
 
 
 
 /* Завдання 11 автоперевірка
  */
+// ЗАДАЧА. ФІЛЬТРАЦІЯ МАСИВУ ЧИСЕЛ 2.0
+// Заміни оголошення функції filterArray() і колбек для методу forEach() на стрілочні функції.
 //!!!before:
-
-
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
+//   numbers.forEach(function (number) {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+//   return filteredNumbers;
+// }
 //!!!after:
-
+// const filterArray = (numbers, value) => {
+//   const filteredNumbers = [];
+//   numbers.forEach((number) => {
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+//   return filteredNumbers;
+// }
 
 
 
 
 /* Завдання 12 автоперевірка
  */
+// ЗАДАЧА. СПІЛЬНІ ЕЛЕМЕНТИ 2.0
+// Заміни оголошення функції getCommonElements() і колбек для методу forEach() на стрілочні функції.
 //!!!before:
-
-
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   firstArray.forEach(function (element) {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+//   return commonElements;
+// }
 //!!!after:
-
+// const getCommonElements = (firstArray, secondArray) => {
+//   const commonElements = [];
+//   firstArray.forEach((element) => {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+//   return commonElements;
+// }
 
 
 
 /* Завдання 13 автоперевірка
  */
+// ЧИСТІ ФУНКЦІЇ
+// Функція changeEven(numbers, value) приймає масив чисел numbers і оновлює кожен елемент, 
+// значення якого - це парне число, додаючи до нього значення параметра value.
+// Виконай рефакторинг функції таким чином, щоб вона стала чистою - не змінювала масив чисел numbers, а створювала, 
+// наповнювала і повертала новий масив з оновленими значеннями.
 //!!!before:
-
-
+// function changeEven(numbers, value) {
+//   for (let i = 0; i < numbers.length; i += 1) {
+//     if (numbers[i] % 2 === 0) {
+//       numbers[i] = numbers[i] + value;
+//     }
+//   }
+// }
 //!!!after:
+// function changeEven(numbers, value) {
+//   const newArray = [];
+// numbers.forEach(element => {
+//     if (element % 2 === 0) {
+//       newArray.push(element + value);
+//     } else {
+//       newArray.push(element);
+//     }
+//   });
+//   return newArray;
+// }
 
 
 
@@ -312,32 +367,112 @@ const calculateTotalPrice = (orderedItems) =>  {
 
 /* Завдання 14 автоперевірка
  */
+// МЕТОД MAP()
+// Доповни код таким чином, щоб у змінній planetsLengths вийшов масив довжин назв планет. Обов'язково використовуй метод map().
 //!!!before:
-
-
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// const planetsLengths = planets;
 //!!!after:
-  
+// const planets = ["Earth", "Mars", "Venus", "Jupiter"];
+// const planetsLengths = planets.map(planet => planet.length);
+// console.log(planetsLengths);
 
 
 
 /* Завдання 15 автоперевірка
  */
+// МЕТОД MAP() І МАСИВ ОБ'ЄКТІВ
+// Використовуючи метод map(), зроби так, щоб у змінній titles вийшов масив назв книг (властивість title) з усіх об'єктів масиву books.
 //!!!before:
-
-
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// const titles = books;
 //!!!after:
-
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// const titles = books.map(book => book.title);
+// console.log(titles);
 
 
 
 
 /* Завдання 16 автоперевірка
  */
+// МЕТОД FLATMAP()
+// Використовуючи метод flatMap(), зроби так, щоб у змінній genres вийшов масив усіх жанрів книг (властивість genres) з масиву книг books.
 //!!!before:
-
-
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+// const genres = books;
 //!!!after:
-  
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    genres: ["adventure", "history"],
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    genres: ["fiction"],
+  },
+  {
+    title: "Redder Than Blood",
+    author: "Tanith Lee",
+    genres: ["horror", "mysticism"],
+  },
+];
+const genres = books.flatMap(book => book.genres);
+console.log(genres);
 
 
 
