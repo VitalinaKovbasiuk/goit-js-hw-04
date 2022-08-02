@@ -454,25 +454,25 @@
 // ];
 // const genres = books;
 //!!!after:
-const books = [
-  {
-    title: "The Last Kingdom",
-    author: "Bernard Cornwell",
-    genres: ["adventure", "history"],
-  },
-  {
-    title: "Beside Still Waters",
-    author: "Robert Sheckley",
-    genres: ["fiction"],
-  },
-  {
-    title: "Redder Than Blood",
-    author: "Tanith Lee",
-    genres: ["horror", "mysticism"],
-  },
-];
-const genres = books.flatMap(book => book.genres);
-console.log(genres);
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism"],
+//   },
+// ];
+// const genres = books.flatMap(book => book.genres);
+// console.log(genres);
 
 
 
@@ -481,10 +481,15 @@ console.log(genres);
 
 /* Завдання 17 автоперевірка
  */
+// ЗАДАЧА. ІМЕНА КОРИСТУВАЧІВ
+// Доповни функцію getUserNames(users) таким чином, щоб вона повертала масив імен 
+// користувачів (властивість name) з масиву об'єктів в параметрі users.
 //!!!before:
-
-
+// const getUserNames = users => {
+// };
 //!!!after:
+// const getUserNames = users => 
+//     users.map(user => user.name);
 
 
 
@@ -493,22 +498,35 @@ console.log(genres);
 
 /* Завдання 18 автоперевірка
  */
+// ЗАДАЧА. ПОШТИ КОРИСТУВАЧІВ
+// Доповни функцію getUserEmails(users) таким чином, щоб вона повертала масив
+// поштових адрес користувачів (властивість email) з масиву об'єктів в параметрі users.
 //!!!before:
-
-
+// const getUserEmails = users => {
+// };
 //!!!after:
- 
+// const getUserEmails = users => 
+// users.map(user => user.email);
+
 
 
 
 
 /* Завдання 19 автоперевірка
  */
+// МЕТОДИ FILTER І FIND
+// Доповни код таким чином, щоб у змінній evenNumbers утворився масив парних чисел з масиву numbers, 
+// а в змінній oddNumbers - масив непарних. Обов'язково використовуй метод filter().
 //!!!before:
-
-
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// const evenNumbers = numbers;
+// const oddNumbers = numbers;
 //!!!after:
-  
+// const numbers = [17, 24, 82, 61, 36, 18, 47, 52, 73];
+// const evenNumbers = numbers.filter(number => number % 2 === 0);
+// const oddNumbers = numbers.filter(number => number % 2);
+// console.log(evenNumbers);
+// console.log(oddNumbers);
 
 
 
@@ -518,10 +536,51 @@ console.log(genres);
 
 /* Завдання 20 автоперевірка
  */
+// ФІЛЬТРАЦІЯ УНІКАЛЬНИХ ЕЛЕМЕНТІВ
+// Доповни код таким чином, щоб у змінній allGenres був масив всіх жанрів книг (властивість genres) з масиву books, 
+// а у змінній uniqueGenres - масив унікальних жанрів, без повторень.
 //!!!before:
-
-
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction", "mysticism"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism", "adventure"],
+//   },
+// ];
+// const allGenres = books;
+// const uniqueGenres = allGenres;
 //!!!after:
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     genres: ["adventure", "history"],
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     genres: ["fiction", "mysticism"],
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     genres: ["horror", "mysticism", "adventure"],
+//   },
+// ]
+// const allGenres = books.flatMap(book => book.genres);
+// const uniqueGenres = allGenres.filter((course, index, array) => array.indexOf(course) === index);
+// console.log(allGenres);
+// console.log(uniqueGenres);
 
 
 
@@ -529,10 +588,58 @@ console.log(genres);
 
 /* Завдання 21 автоперевірка
  */
+// МЕТОД FILTER() І МАСИВ ОБ'ЄКТІВ
+// Використовуючи метод filter(), доповни код таким чином, щоб:
+// У змінній topRatedBooks утворився масив книг, рейтинг яких (властивість rating) більший за або дорівнює значенню змінної MIN_RATING.
+// У змінній booksByAuthor утворився масив книг, написаних автором з ім'ям (властивість author), яке збігається зі значенням у змінній AUTHOR.
 //!!!before:
-
-
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+// ];
+// const MIN_RATING = 8;
+// const AUTHOR = "Bernard Cornwell";
+// const topRatedBooks = books;
+// const booksByAuthor = books;
 //!!!after:
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+const MIN_RATING = 8;
+const AUTHOR = "Bernard Cornwell";
+const topRatedBooks = books.filter(book => book.rating >= MIN_RATING);
+const booksByAuthor = books.filter(book => book.author === AUTHOR);
 
 
 
