@@ -729,11 +729,16 @@
 
 /* Завдання 27 автоперевірка
  */
+// ЗАДАЧА. НЕАКТИВНІ КОРИСТУВАЧІ
+// Доповни функцію getInactiveUsers(users) таким чином, 
+// щоб вона повертала масив неактивних користувачів, значення властивості isActive яких - false.
 //!!!before:
-
-
+// const getInactiveUsers = (users) => {
+// };
 //!!!after:
-
+// const getInactiveUsers = (users) => 
+//      users.filter(user => user.isActive === false);
+// ;
 
 
 
@@ -741,11 +746,57 @@
 
 /* Завдання 28 автоперевірка
  */
+// МЕТОД FIND()
+// Використовуючи метод find(), доповни код таким чином, щоб:
+// У змінній bookWithTitle утворився об'єкт книги, назва якої (властивість title) збігається зі значенням змінної BOOK_TITLE.
+// У змінній bookByAuthor утворився об'єкт книги, автор якої (властивість author) збігається зі значенням змінної AUTHOR.
 //!!!before:
-
-
+// const books = [
+//    {
+//      title: 'The Last Kingdom',
+//      author: 'Bernard Cornwell',
+//      rating: 8.38,
+//    },
+//    {
+//      title: 'Beside Still Waters',
+//      author: 'Robert Sheckley',
+//      rating: 8.51,
+//    },
+//    {
+//      title: 'The Dream of a Ridiculous Man',
+//      author: 'Fyodor Dostoevsky',
+//      rating: 7.75,
+//    },
+//    { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//  ];
+//  const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+//  const AUTHOR = 'Robert Sheckley';
+//  const bookWithTitle = books;
+//  const bookByAuthor = books;
 //!!!after:
-
+// const books = [
+//    {
+//      title: 'The Last Kingdom',
+//      author: 'Bernard Cornwell',
+//      rating: 8.38,
+//    },
+//    {
+//      title: 'Beside Still Waters',
+//      author: 'Robert Sheckley',
+//      rating: 8.51,
+//    },
+//    {
+//      title: 'The Dream of a Ridiculous Man',
+//      author: 'Fyodor Dostoevsky',
+//      rating: 7.75,
+//    },
+//    { title: 'Redder Than Blood', author: 'Tanith Lee', rating: 7.94 },
+//  ];
+//  const BOOK_TITLE = 'The Dream of a Ridiculous Man';
+//  const AUTHOR = 'Robert Sheckley';
+//  const bookWithTitle = books.find((option) => option.title === BOOK_TITLE);
+//  const bookByAuthor = books.find((option) => option.author === AUTHOR);
+ 
 
 
 
@@ -754,20 +805,52 @@
 
 /* Завдання 29 автоперевірка
  */
+// ЗАДАЧА. КОРИСТУВАЧ З ПОШТОЮ
+// Доповни функцію getUserWithEmail(users, email) таким чином, щоб вона повертала об'єкт користувача, 
+// пошта якого (властивість email) збігається зі значенням параметра email.
 //!!!before:
-
-
+// const getUserWithEmail = (users, email) => {
+// };
 //!!!after:
+// const getUserWithEmail = (users, email) => 
+//    users.find((option) => option.email === email)
+// ;
+
+
+
 
 
 
 /* Завдання 30 автоперевірка
  */
+// МЕТОД EVERY()
+// Використовуючи метод every(), доповни код таким чином, щоб:
+// У змінній eachElementInFirstIsEven був результат перевірки всіх елементів масиву firstArray на парність.
+// У змінній eachElementInFirstIsOdd був результат перевірки всіх елементів масиву firstArray на непарність.
+// У змінній eachElementInSecondIsEven був результат перевірки всіх елементів масиву secondArray на парність.
+// У змінній eachElementInSecondIsOdd був результат перевірки всіх елементів масиву secondArray на непарність.
+// У змінній eachElementInThirdIsEven був результат перевірки всіх елементів масиву thirdArray на парність.
+// У змінній eachElementInThirdIsOdd був результат перевірки всіх елементів масиву thirdArray на непарність.
 //!!!before:
-
-
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// const eachElementInFirstIsEven = firstArray;
+// const eachElementInFirstIsOdd = firstArray;
+// const eachElementInSecondIsEven = secondArray;
+// const eachElementInSecondIsOdd = secondArray;
+// const eachElementInThirdIsEven = thirdArray;
+// const eachElementInThirdIsOdd = thirdArray;
 //!!!after:
-
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// const eachElementInFirstIsEven = firstArray.every((value) => value >= 0);
+// const eachElementInFirstIsOdd = firstArray.every((value) => value <= 0);
+// const eachElementInSecondIsEven = secondArray.every((value) => value <= 0);
+// const eachElementInSecondIsOdd = secondArray.every((value) => value >= 0);
+// const eachElementInThirdIsEven = thirdArray.every((value) => value <= 0);
+// const eachElementInThirdIsOdd = thirdArray.every((value) => value <= 0);
 
 
 
@@ -775,10 +858,16 @@
 
 /* Завдання 31 автоперевірка
  */
+// ЗАДАЧА. ЧИ ВСІ КОРИСТУВАЧІ АКТИВНІ
+// Доповни функцію isEveryUserActive(users) таким чином, щоб вона перевіряла, 
+// чи всі користувачі зараз активні (властивість isActive) і повертала true або false.
 //!!!before:
-
-
+// const isEveryUserActive = (users) => {
+// };
 //!!!after:
+// const isEveryUserActive = (users) =>
+//     users.every(user => user.isActive);
+// ;
 
 
 
@@ -786,10 +875,36 @@
 
 /* Завдання 32 автоперевірка
  */
+// МЕТОД SOME()
+// Використовуючи метод some(), доповни код таким чином, щоб:
+// У змінній anyElementInFirstIsEven був результат перевірки наявності парних елементів в масиві firstArray.
+// У змінній anyElementInFirstIsOdd був результат перевірки наявності непарних елементів в масиві firstArray.
+// У змінній anyElementInSecondIsEven був результат перевірки наявності парних елементів в масиві secondArray.
+// У змінній anyElementInSecondIsOdd був результат перевірки наявності непарних елементів в масиві secondArray.
+// У змінній anyElementInThirdIsEven був результат перевірки наявності парних елементів в масиві thirdArray.
+// У змінній anyElementInThirdIsOdd був результат перевірки наявності непарних елементів в масиві thirdArray.
 //!!!before:
-
-
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// const anyElementInFirstIsEven = firstArray;
+// const anyElementInFirstIsOdd = firstArray;
+// const anyElementInSecondIsEven = secondArray;
+// const anyElementInSecondIsOdd = secondArray;
+// const anyElementInThirdIsEven = thirdArray;
+// const anyElementInThirdIsOdd = thirdArray;
 //!!!after:
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// const anyElementInFirstIsEven = firstArray.some(value => value >= 0); ;
+// const anyElementInFirstIsOdd = firstArray.some(value => value <= 0); ;
+// const anyElementInSecondIsEven = secondArray.some(value => value <= 0); ;
+// const anyElementInSecondIsOdd = secondArray.some(value => value >= 0); ;
+// const anyElementInThirdIsEven = thirdArray.some(value => value >= 0); ;
+// const anyElementInThirdIsOdd = thirdArray.some(value => value >= 0); ;
+
+
 
 
 
