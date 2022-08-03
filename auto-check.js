@@ -912,10 +912,17 @@
 
 /* Завдання 33 автоперевірка
  */
+// ЗАДАЧА. ЧИ Є АКТИВНІ КОРИСТУВАЧІ
+// Доповни функцію isAnyUserActive(users) таким чином, 
+// щоб вона перевіряла наявність активних користувачів (властивість isActive) і повертала true або false.
 //!!!before:
-
-
+// const isAnyUserActive = users => {
+// };
 //!!!after:
+// const isAnyUserActive = users => 
+//    users.some(user => user.isActive)
+// ;
+
 
 
 
@@ -923,10 +930,31 @@
 
 /* Завдання 34 автоперевірка
  */
+// МЕТОД REDUCE()
+// Ігровому сервісу необхідний функціонал підрахунку середнього часу, проведеного в іграх. 
+// Доповни код таким чином, щоб у змінній totalPlayTime вийшло загальний ігровий час з масиву playtimes.
 //!!!before:
-
-
+// const players = {
+//    mango: 1270,
+//    poly: 468,
+//    ajax: 710,
+//    kiwi: 244
+//  };
+//  const playtimes = Object.values(players); 
+//  const totalPlayTime = playtimes;
+//  const averagePlayTime = totalPlayTime / playtimes.length;
 //!!!after:
+// const players = {
+//    mango: 1270,
+//    poly: 468,
+//    ajax: 710,
+//    kiwi: 244
+//  };
+//  const playtimes = Object.values(players);
+//  const totalPlayTime = playtimes.reduce((previousValue, number) => {
+//    return previousValue + number;
+//  }, 0);;
+//  const averagePlayTime = totalPlayTime / playtimes.length;
 
 
 
@@ -936,11 +964,29 @@
 
 /* Завдання 35 автоперевірка
  */
+// МЕТОД REDUCE() І МАСИВ ОБ'ЄКТІВ
+// Нашому сервісу необхідно розрахувати середній час, проведений в одній грі для кожного гравця, і отримати загальну суму цих значень часу. 
+// Розрахувати час для кожного з гравців можна, розділивши його час (властивість playtime) на кількість ігор (властивість gamesPlayed).
 //!!!before:
-
-
+// const players = [
+//    { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//    { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//    { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//    { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+//  ];
+//  const totalAveragePlaytimePerGame = players;
 //!!!after:
-
+// const players = [
+//    { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//    { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//    { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//    { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+//  ];
+//  const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+//    return total + player.playtime / player.gamesPlayed;
+//  }, 0);
+ 
+ 
 
 
 
@@ -948,10 +994,17 @@
 
 /* Завдання 36 автоперевірка
  */
+// ЗАДАЧА. ЗАГАЛЬНИЙ БАЛАНС КОРИСТУВАЧІВ
+// Доповни функцію calculateTotalBalance(users) таким чином, 
+// щоб вона рахувала і повертала суму всіх коштів (властивість balance), які зберігають користувачі з масиву users.
 //!!!before:
-
-
+// const calculateTotalBalance = users => {
+// };
 //!!!after:
+// const calculateTotalBalance = users => {
+//    return users.reduce((totalBalance, user) => totalBalance + user.balance, 0);
+// };
+
 
 
 
@@ -959,21 +1012,44 @@
 
 /* Завдання 37 автоперевірка
  */
+// ЗАДАЧА. ЗАГАЛЬНА КІЛЬКІСТЬ ДРУЗІВ
+// Доповни функцію getTotalFriendCount(users) таким чином, щоб вона рахувала і повертала 
+// загальну кількість друзів (властивість friends) усіх користувачів з масиву users.
 //!!!before:
-
-
+// const getTotalFriendCount = users => {
+// };
 //!!!after:
-  
+// const getTotalFriendCount = users => users.reduce((total, user) => total + user.friends.length, 0);
 
 
 
 
 /* Завдання 38 автоперевірка
  */
+// МЕТОД SORT()
+// Доповни код таким чином, щоб у змінній ascendingReleaseDates вийшла копія масиву releaseDates, відсортована за зростанням, 
+// а у змінній alphabeticalAuthors - копія масиву імен авторів authors, відсортована за алфавітом.
 //!!!before:
-
-
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   "Tanith Lee",
+//   "Bernard Cornwell",
+//   "Robert Sheckley",
+//   "Fyodor Dostoevsky",
+// ];
+// const ascendingReleaseDates = releaseDates;
+// const alphabeticalAuthors = authors;
 //!!!after:
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   "Tanith Lee",
+//   "Bernard Cornwell",
+//   "Robert Sheckley",
+//   "Fyodor Dostoevsky",
+// ];
+// const ascendingReleaseDates = [...releaseDates].sort();
+// const alphabeticalAuthors = [...authors].sort();
+
 
 
 
@@ -981,6 +1057,7 @@
 
 /* Завдання 39 автоперевірка
  */
+
 //!!!before:
 
 
